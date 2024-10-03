@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python3.10
 
 import rospy 
 from laser_assembler.srv import *

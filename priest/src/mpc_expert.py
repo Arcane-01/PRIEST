@@ -6,7 +6,7 @@ import bernstein_coeff_order10_arbitinterval
 import time
 import matplotlib.pyplot as plt 
 import jax
-from jax.ops import index_update, index
+# from jax.ops import index_update, index
 from scipy.interpolate import CubicSpline
 
 import matplotlib.pyplot as plt 
