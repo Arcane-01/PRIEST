@@ -64,13 +64,22 @@ class planning_traj():
         self.ay_fin = 0.0
         self.x_init = -0.6
         self.y_init = 1
-        self.x_fin = -3
-        self.y_fin = 15
-        self.x_end = -3
-        self.y_end = 15
 
         self.x_best_global = jnp.linspace(self.x_init, self.x_init, 100)
         self.y_best_global = jnp.linspace(self.y_init, self.y_init, 100)
+
+        ############# Goal position ###################
+        print ("Enter a 2D Nav Goal in RViz")
+        self.goal_position = rospy.wait_for_message('move_base_simple/goal', PoseStamped, timeout=30)
+        self.x_fin = self.goal_position.pose.position.x
+        self.y_fin = self.goal_position.pose.position.y
+        self.x_end = self.goal_position.pose.position.x
+        self.y_end = self.goal_position.pose.position.y
+        print ("Goal position set as x: ", self.x_fin,"y: ",self.y_fin)
+        # self.x_fin = -3
+        # self.y_fin = 15
+        # self.x_end = -3
+        # self.y_end = 15
 
         ################ Boundaries ######################### 
 
